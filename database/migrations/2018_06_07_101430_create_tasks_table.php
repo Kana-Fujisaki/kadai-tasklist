@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTasks extends Migration
+class CreateTasksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTasks extends Migration
      */
     public function up()
     {
-        Schema::create('tasks', function (Blueprint $table) {
+      Schema::table('tasks', function (Blueprint $table) {
             $table->string('status');
         });
     }
@@ -28,5 +28,6 @@ class CreateTasks extends Migration
         Schema::table('tasks', function (Blueprint $table) {
             $table->dropColumn('status');
         });
+        
     }
 }
